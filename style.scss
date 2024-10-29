@@ -1,0 +1,200 @@
+@import 'color';
+@import 'mixin';
+.explore{
+    &-title{
+        @include font(Rubik, 600, normal, 40px);
+        @include margin(450px, 88px, none);
+        @include width(567px, 46.768px);
+    color: $white;
+    text-align: center;
+    line-height: normal;
+
+    &2{
+        @include font(Rubik, 600, normal, 40px);
+        @include width(567px, 46.768px);
+        color: $white;
+        text-align: center;
+        line-height: normal;
+        margin-left: 450px;
+    }
+    }
+    &-subtitle{
+        @include font(Rubik, 500, normal, 18px);
+        @include margin(500px, 30px, none);
+        @include width(444px, 20.896px);
+    color: $white;
+    text-align: center;
+    line-height: normal;
+    }
+    &_switch{
+        @include flex(flex, none, center);
+        @include font(Rubik, 400, normal, 14px);
+        @include margin(600px, 25px, 60px);
+        @include width(243px, 25.871px);
+    column-gap: 15px;
+    color: $white;
+    line-height: normal;    
+
+    &_title{
+        transition: color 0.25s;
+        /* Smooth color transition */
+        &.active{
+            color: $white;
+             /* Active text color */
+        }
+        &:not{
+            &.active{
+                color: $lightgray;
+                /* Inactive text color */
+            }
+        }
+    }
+
+    &2{
+        @include flex(flex, none, center);
+        @include font(Rubik, 400, normal, 14px);
+        @include margin(625px, 25px, none);
+        @include width(243px, 25.871px);
+        column-gap: 15px;
+        color: $white;
+        line-height: normal;
+    }
+    &_checkbox{
+        @include width(54px, 25.871px);
+        background: $verydarkblue;
+        border-radius: 12px;
+        position: relative;
+    }
+    }
+    &_checkbox{
+        @include width(100%, 100%);
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 2;
+
+    &_span{
+        @include width(18px, 18px);
+    border-radius: 50%;
+    background: $purple;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transform: translate(0);
+    transition: transform .25s;
+    /* Smooth transition for toggle */
+        }
+    }
+    &_list{
+        &_text{
+            @include font(Rubik, 400, normal, 15px);
+            color: $white;
+            line-height: 36px
+        }
+    }
+    &_info{
+        @include flex(flex, column);
+        row-gap: 80px;
+    }
+    &_img{
+        &_wrap{
+            @include margin(300px, 50px, none);
+    background-repeat: no-repeat;
+    position: absolute;
+        }
+        &1{
+            margin-top: -88px;
+        }
+        &2{
+            position: absolute;
+            margin: 250px 0px 0px 452px;
+        }
+    }
+    &_description{
+        @include margin(350px, 80px, none);
+    }
+    &_list{
+        &_1{
+            width: 409px;
+            height: 214.932px;
+        }
+        &_2{
+            list-style-type: none;
+        }
+        &_text{
+            list-style-type: none;
+            &_1{
+                @include font(Rubik, 400, normal, 15px);
+            color: $white;
+            line-height: 36px;
+            list-style-type: none;
+             margin-left: 750px;
+            }
+        }
+        &_purple{
+            @include font(Rubik, 400, normal, 15px);
+    color: $purple;
+    line-height: 36px;
+        }
+    }
+    &_button{
+        @include width(96px, 29.852px);
+    border-radius: 6px;
+    background: $red;
+    margin: -47px 0px 180px 345px;
+
+    &-text{
+        @include font(Rubik, 500, normal, 13px);
+        padding: 8px 0px 0px 17px;
+        color: $white;
+        line-height: normal;
+        text-transform: uppercase;
+        height: 14.926px;
+    }
+    }
+    &_item{
+        &-price{
+            @include font(Rubik, 700, normal, 20px);
+    color: $white;
+    line-height: normal;
+    margin: 20px 0px 0px 660px;
+        }
+    }
+    &-item{
+        margin-top: 200px;
+    }
+    &_button{
+        &1{
+            @include margin(750px, 20px, none);
+            width: 96px;
+            height: 29.852px;
+            border-radius: 6px;
+            background: $red;
+        }
+        &-text1{
+            @include font(Rubik, 500, normal, 13px);
+            color: $white;
+    line-height: normal;
+    text-transform: uppercase;
+    padding: 8px 0px 0px 17px;
+        }
+    }
+}
+
+.explore_checkbox:checked+.explore_checkbox_span {
+    transform: translateX(28px);
+}
+.active {
+    color: $white;
+}
+.explore_checkbox:checked+.explore_checkbox_span {
+    transform: translateX(28px);
+    /* Moves the toggle when checked */
+}
+@media (max-width: 320px) {
+
+    .explore_img_wrap {
+        display: none;
+    }
+       
+}
